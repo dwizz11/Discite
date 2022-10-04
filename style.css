@@ -1,0 +1,516 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    /* height: 100vh; */
+}
+
+/* Header Bar */
+
+.header {
+    background-color: #00e692;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 77.33px;
+}
+
+.logo {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    /* ngambil ukuran persen dari width */
+    padding: 1rem;
+    padding-left: 1.75rem;
+
+    letter-spacing: 0.07em;
+
+    color: #000000;
+
+    text-shadow: -5.1918px 3.7061px 0px #b3ffdf;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    padding-right: 2.5rem;
+    position: relative;
+    cursor: pointer;
+    height: 100%;
+}
+
+.profile-img {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 30px;
+    margin-right: 1rem;
+    overflow: hidden;
+}
+
+.profile-img img {
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+    object-fit: cover;
+}
+
+.profile-dropdown {
+    position: absolute;
+    top: calc(100% + 1rem);
+    width: 100%;
+    right: 20%;
+    background-color: rgb(195, 255, 208);
+    border-radius: 15px;
+    box-shadow: 8px 8px 14px -2px rgba(0, 0, 0, 0.42);
+    opacity: 0;
+    cursor: default;
+    transform: translateY(-10px);
+    transition: 150ms ease-in-out;
+    z-index: 100;
+}
+
+.profile.active .profile-dropdown {
+    opacity: 1;
+    transition: 150ms ease-in-out;
+
+    transform: translateY(0);
+}
+
+.profile-dropdown ul {
+    text-align: center;
+    text-decoration: none;
+    list-style: none;
+
+    /* padding: 10px; */
+}
+
+.profile-dropdown ul li {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: 500;
+}
+
+.profile-dropdown ul li:first-of-type {
+    border-radius: 15px 15px 0 0;
+}
+
+.profile-dropdown ul li:last-of-type {
+    border-radius: 0 0 15px 15px;
+}
+
+/* .profile-dropdown ul li:nth-of-type(1) { */
+/* margin: 5px; */
+/* padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 15px 15px 0 0;
+    font-weight: 500; */
+/* height: 100%; */
+/* } */
+
+.profile.active .profile-dropdown ul li:hover {
+    background-color: rgba(255, 255, 255, 1);
+    transition: 150ms ease-in-out;
+    cursor: pointer;
+}
+
+.hitbox {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/* Content Wrapper */
+
+.contentWrapper {
+    display: flex;
+    /* position: relative; */
+    /* position: absolute; */
+
+    width: 100%;
+    height: calc(100vh - 77.33px);
+    overflow-y: hidden;
+}
+
+/* Side Nav */
+
+.sidenav {
+    /* position: absolute; */
+    width: 5.5%;
+    height: 100%;
+    background-color: white;
+
+    box-shadow: 3px 11px 21px -1px rgba(0, 0, 0, 0.25);
+}
+
+.sidenavButton {
+    width: 100%;
+    text-align: center;
+    padding: 20% 0;
+}
+
+.sidenavButton i {
+    font-size: 20px;
+}
+
+.sidenavButton p {
+    font-size: 13px;
+}
+
+.sidenavButton:hover {
+    background-color: rgba(0, 0, 0, 0.199);
+    transition: 170ms ease-in-out;
+    cursor: pointer;
+}
+
+.sidenavButton.active {
+    background-color: #b3ffdf;
+    cursor: default;
+}
+
+/* content */
+
+.content {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    position: relative;
+}
+
+.contents{
+    padding: 5%;
+    height: fit-content;
+}
+
+
+/* .homePage{
+    width: 100%;
+    height: 100%;
+} */
+
+/* Klo ini semua nya dimasukin buat yang active sama yang non active */
+.home.contents, .search.contents{
+    visibility: hidden;
+    opacity: 0;
+    /* transform: translateX(-100%); */
+    transition: 50ms ease-out;
+    top: 0;
+    position: absolute;
+}
+
+
+
+.home.contents.active, .search.contents.active{
+    visibility: visible;
+    opacity: 1;
+    /* transform: translateX(0); */
+    transition: 200ms ease-in;
+    top: 0;
+    position: unset;
+}
+
+/* buat semua class yang dibawah "home" nanti jangan lupa masukin ke 2 selector dibawah. Selector pertama buat yang non active yang satunya lagi buat yang active*/
+
+/* .search.contents, .home.contents{
+    top: -100%;
+    position: absolute;
+    /* padding: 4%; */
+/* } */ 
+
+/* .search.contents.active{
+    top: 0;
+} */
+
+
+
+
+
+/* Profile dashboard */
+
+/* .ongoingCourse, .completedCourse, .profile-dashboard{
+    margin-left: 7%;
+} */
+
+.profile-dashboard {
+    /* margin-top: 5%; */
+    width: 37%;
+    padding-left: 2%;
+    
+
+    box-shadow: 0px 0px 2.2871px 3.16527px #41ffaf;
+    
+    border-radius: 15px;
+}
+
+.firstRow {
+    display: flex;
+}
+
+.dashboard-img {
+    /* position: absolute; */
+    width: 8rem;
+    height: 8rem;
+    border-radius: 8rem;
+    margin-top: -2rem;
+    margin-right: 1rem;
+    overflow: hidden;
+    box-shadow: 0px 0px 2.2871px 3.16527px #41ffaf;
+    top: -20%;
+    left: 10%;
+}
+
+.dashboard-img img {
+    /* display: block; */
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+    object-fit: cover;
+
+}
+
+.nameAndEditProfile {
+    width: calc(100% - 8rem);
+}
+
+.editProfileBtn {
+    font-size: 7px;
+    font-weight: 700;
+    width: 28%;
+    margin-left: 65%;
+    margin-top: 4%;
+
+    box-shadow: 0px 0px 3.20988px 0.901235px rgba(0, 0, 0, 0.25);
+    border-radius: 18.7432px;
+    text-align: center;
+    transition: 200ms ease-in-out;
+}
+
+.editProfileBtn:hover {
+    box-shadow: 0px 0px 9.20988px 0.901235px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    transition: 200ms ease-in-out;
+}
+
+.editProfileBtn p {
+    margin: 0 auto;
+    padding: 3px 0;
+    width: 80%;
+}
+
+.name {
+    padding-top: 4%;
+}
+
+.profile-dashboard h5 {
+    font-weight: 500;
+}
+
+.profile-dashboard .firstRow .nameAndEditProfile .name h5:first-of-type {
+    font-size: 1rem;
+}
+
+.profile-dashboard .firstRow .nameAndEditProfile .name h5:nth-of-type(2) {
+    color: grey;
+    font-size: 0.7rem;
+}
+
+#cwmv{
+    margin-top: 2%;
+}
+
+.socials {
+    /* background-color: #00e692; */
+    /* position: absolute; */
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 4%;
+}
+
+.socialsBtn {
+    border-radius: 15px;
+    box-shadow: 0px 0px 3.20988px 0.901235px rgba(0, 0, 0, 0.25);
+    font-size: 0.8rem;
+    width: 26%;
+    text-align: center;
+    margin-top: 2%;
+    margin-left: 3%;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: white;
+    cursor: pointer;
+    transition: 200ms ease-in-out;
+    
+}
+
+.socialsBtn:hover {
+    box-shadow: 0px 0px 7.20988px 3.901235px rgba(0, 0, 0, 0.25);
+    transition: 200ms ease-in-out;
+}
+
+.linkedin {
+    background-color: #0072b1;
+}
+
+.Facebook {
+    background: linear-gradient(to bottom, #3a5795 0%, #2b4886 100%);
+    background: -webkit-linear-gradient(top, #3a5795 0%, #2b4886 100%);
+}
+
+.Instagram{
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+}
+
+.Twitter{
+    background: #00acee ;
+}
+
+
+
+
+
+/* Ongoing Course */
+
+
+.ongoingCourse, .completedCourse{
+    margin-top: 4%;
+    padding: 4%;
+    box-shadow: 0px 0px 3.20988px 0.901235px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    max-height: 24.5rem;
+    overflow: hidden;
+    /* transition: max-height 150ms ease-in-out; */
+    /* background-color: #00e692; */
+}
+
+
+.ongoingCourse.expand, .completedCourse.expand{
+    max-height: none;
+    /* transition: max-height 150ms ease-in-out; */
+}
+
+
+.upperPartOngoing, .upperPartCompleted{
+    display: flex;
+}
+
+.seeAllbtn{
+    font-size: 10px;
+    font-weight: 700;
+    width: 10%;
+    height: fit-content;
+    margin-left: 60%;
+    margin-top: 1%;
+    background-color: #44FFB1;
+    box-shadow: 0px 0px 3.20988px 0.901235px rgba(0, 0, 0, 0.25);
+    border-radius: 18.7432px;
+    text-align: center;
+    transition: 200ms ease-in-out;
+}
+
+.upperPartCompleted > .seeAllbtn{
+    margin-left: calc(60% - 48px);
+}
+
+.seeAllbtn:hover {
+    box-shadow: 0px 0px 9.20988px 0.901235px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    transition: 200ms ease-in-out;
+}
+
+.seeAllbtn p {
+    margin: 0 auto;
+    padding: 3px 0;
+    width: 80%;
+}
+
+.completedCourse{
+    margin-bottom: 4%;
+}
+
+.cardWrapper{
+    display: flex;
+    flex-wrap: wrap;
+    /* box-shadow: 0px 0px 3.20988px 0.901235px rgba(0, 0, 0, 0.25);
+    padding: 3%;
+    border-radius: 15px; */
+}
+
+.cards{
+    margin-top: 4%;
+    box-shadow: 0px 0px 3.20988px 0.901235px rgba(0, 0, 0, 0.25);
+    width: fit-content;
+    padding: 2%;
+    border-radius: 15px;
+    margin-left: 13%;
+}
+
+/* .cards:nth-of-type(1), .cards:nth-of-type(2), .cards:nth-of-type(3){
+    margin-top: 0;
+} */
+
+.cards:nth-of-type(3n + 1){
+    margin-left: unset;
+}
+
+
+
+
+
+.cardContent .cardImage{
+    width: 11rem;
+    height: 11rem;
+    border-radius: 10px;
+    box-shadow: 0px 0px 3.20988px 1.901235px rgba(0, 0, 0, 0.25);
+    
+}
+
+.cardContent .cardImage img{
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+    object-fit: cover;
+}
+
+.cardContent .descriptionPart{
+    margin-top: 10%;
+}
+
+.cardContent .descriptionPart p {
+    font-weight: 600;
+    font-size: .7rem;
+}
+
+.cardContent .descriptionPart p:nth-of-type(1) {
+    font-size: 1rem;
+}
+
+.cardContent .descriptionPart p:nth-of-type(2) {
+    font-size: .7rem;
+}
+
+
+.cardContent .descriptionPart p:nth-of-type(2) span {
+    font-weight: normal;
+}
+
+.cardContent .descriptionPart p:nth-of-type(3){
+    margin-top: 5%;
+}
+
+
+.cardContent .descriptionPart p:nth-of-type(4){
+    font-weight: normal;
+    font-size: .6rem;
+}
+
+.descriptionPart .progressBar{
+    width: 100%;
+    height: .6rem;
+    background-color: #3C3056;
+    border-radius: 20px;
+    margin-top: 3%;
+}
+
+.descriptionPart .progressFilling{
+    height: inherit;
+    border-radius: 20px 0px 0px 20px;
+}
